@@ -23,7 +23,7 @@ _install_firefox() {
         sudo mkdir -p "/etc/firefox/policies/"
         sudo curl -Lfs -o "/etc/firefox/policies/policies.json" "$FIREFOX_SETTINGS" || { echo "Failed!"; return; }
     fi
-    echo "Done!"
+    echo "Updated Firefox settings."
 }
 
 # Remove Firefox settings
@@ -34,31 +34,29 @@ _uninstall_firefox() {
          _confirm_sudo
         sudo rm "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" || { echo "Failed!"; return; }
     fi
-    echo "Done!"
+    echo "Removed Firefox settings."
 }
 
 # Main menu selection
 _main() {
     # Create list for menu options
     declare -a options=()
-    # Check Firefox options
-    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" ]; then
-        # Mac with Firefox settings already installed
-        options+=("Mozilla Firefox: Remove settings")
-    elif [ "$OS" = "Linux" ] && [ -e "/etc/firefox/policies/policies.json" ]; then
-        # Linux PC with Firefox settings already installed
-        options+=("Mozilla Firefox: Remove settings")
-    elif [ "$OS" = "Darwin" ] && [ -e "/Applications/Firefox.app" ]; then
-        # Mac without Firefox settings
+    # Firefox without settings applied
+    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Firefox.app" ]; then
         options+=("Mozilla Firefox: Update settings")
     elif [ "$OS" = "Linux" ] && [ -x "$(command -v firefox)" ]; then
-        # Linux PC without Firefox settings
         options+=("Mozilla Firefox: Update settings")
+    fi
+    # Firefox with settings already applied
+    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" ]; then
+        options+=("Mozilla Firefox: Remove settings")
+    elif [ "$OS" = "Linux" ] && [ -e "/etc/firefox/policies/policies.json" ]; then
+        options+=("Mozilla Firefox: Remove settings")
     fi
     # Add exit option
     options+=("Exit")
     # Show main menu
-    echo -e "\nJust the Browser on $OS\n====================\n\nSelect an option by typing the number, then pressing Return/Enter on your keyboard to confirm.\n\nYou will need to restart your browser for changes to take effect.\n"
+    echo -e "\nJust the Browser ($OS)\n========\n\nSelect an option by typing the number, then pressing Return/Enter on your keyboard to confirm.\n\nYou will need to restart your browser for changes to take effect.\n"
     select choice in "${options[@]}"; do
         if [ "$choice" = "Mozilla Firefox: Update settings" ]; then
             _install_firefox
