@@ -1,1 +1,5 @@
-remote_theme: jekyll/minima
+theme: minima
+
+minima:
+  skin: auto
+  hide_site_feed_link: true
