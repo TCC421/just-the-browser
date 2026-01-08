@@ -1,6 +1,6 @@
 # Just the Browser
 
-Just the Browser is a tool for removing product integrations, AI features, and other non-essential functionality from desktop web browsers. The goal is to give you "just the browser" and nothing else, using policy settings intended for corporations and other organizations.
+Just the Browser is a tool for removing telemetry data reporting, AI features, product integrations, and sponsored content from desktop web browsers. The goal is to give you "just the browser" with a more streamlined experience, using policy settings intended for corporations and other organizations.
 
 This project is in early development, initially targeting Windows and macOS. You can check out the [GitHub repository](https://github.com/corbindavenport/just-the-browser) to contribute or look at the code.
 
@@ -38,10 +38,17 @@ Not sure which link to use? Try the [official download page](https://www.firefox
 
 Not sure which link to use? Try the [official download page](https://www.microsoft.com/en-us/edge/download).
 
-## Feature availability
+## Browser modifications
 
-This is a list of features supported by Just the Browser.
+Just the Browser uses group policy settings to change the behavior of web browsers. Firefox settings are applied with a [policies JSON file](https://mozilla.github.io/policy-templates/), and you can check the status by opening the `about:policies` page.
 
-| Feature      | Windows | macOS |
-| ------------ | :-----: | :---: |
-| Browser      | X       | X     |
+### Mozilla Firefox
+
+| Feature | Information |
+| ------- | ----------- |
+| [DisableFirefoxStudies](https://mozilla.github.io/policy-templates/#disablefirefoxstudies) | Prevents Firefox from enrolling in [Studies](https://support.mozilla.org/en-US/kb/shield), which may involve additional analytics reporting. |
+| [DisableTelemetry](https://mozilla.github.io/policy-templates/#disabletelemetry) | Prevents the upload of telemetry data. As of Firefox 83 and Firefox ESR 78.5, local storage of telemetry data is disabled as well. |
+| [DontCheckDefaultBrowser](https://mozilla.github.io/policy-templates/#dontcheckdefaultbrowser) | Prevents popup warnings about Firefox not being the default browser. |
+| [FirefoxHome](https://mozilla.github.io/policy-templates/#firefoxhome) | Turns off stores, sponsored stories, and sponsored top sites on the Firefox Home page. |
+| [GenerativeAI](https://mozilla.github.io/policy-templates/#generativeai) | Turns off all generative AI features, including AI chatbots in the sidebar, link previews, and tab group suggestions. |
+| [SearchEngines](https://mozilla.github.io/policy-templates/#searchengines) | Removes Perplexity AI as a default search engine. |

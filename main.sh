@@ -6,8 +6,9 @@ FIREFOX_SETTINGS="$BASEURL/settings/firefox.json"
 
 # Install Firefox settings
 _install_firefox() {
+    echo "Please wait..."
     mkdir -p "/Applications/Firefox.app/Contents/Resources/distribution/"
-    curl -Lfs --progress-bar -o "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" "$FIREFOX_SETTINGS" || { echo "Failed!"; return; }
+    curl -Lfs -o "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" "$FIREFOX_SETTINGS" || { echo "Failed!"; return; }
     echo "Done!"
 }
 
