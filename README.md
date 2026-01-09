@@ -4,22 +4,22 @@ This website and script is still in early development!
 
 # Just the Browser
 
-Just the Browser helps you remove telemetry data reporting, AI features, product integrations, and sponsored content from desktop web browsers. The goal is to give you "just the browser" with a more streamlined experience, without resorting to alternative web browsers.
+Just the Browser helps you remove AI features, telemetry data reporting, sponsored content, product integrations, and other annoyances from desktop web browsers. The goal is to give you "just the browser" and nothing else, using hidden settings in web browsers intended for companies and other organizations.
 
-This project includes configuration files for popular web browsers, and a script to install them for you. The [GitHub repository](https://github.com/corbindavenport/just-the-browser) includes the code, resources for contributing, and the configuration files.
+This project includes configuration files for popular web browsers, documentation for installing and modifying them, and easy installation scripts. Everything is [open-source on GitHub](https://github.com/corbindavenport/just-the-browser).
 
 ![Screenshot of Firefox settings installation on Mac](screen.png)
 
 ## Get started
 
-The setup script can do everything for you in a few clicks. You can also follow the manual guides for [Firefox](firefox/README.md).
+The setup script can install the configuration files in a few clicks. You can also follow the manual guides for [Firefox](firefox/README.md).
 
-**Windows:** Open a PowerShell prompt as Administrator. You can do this by right-clicking the Windows button in the taskbar, then selecting the "Terminal (Admin)" or "PowerShell (Admin) menu option. Next, run the script:
+**Windows:** Open a PowerShell prompt as Administrator. You can do this by right-clicking the Windows button in the taskbar, then selecting the "Terminal (Admin)" or "PowerShell (Admin)" menu option. Next, copy the below command, paste it into the window (`Ctrl+V`), and press the Enter/Return key:
 ```
 & ([scriptblock]::Create((irm "https://raw.githubusercontent.com/corbindavenport/just-the-browser/HEAD/main.ps1")))
 ```
 
-**Mac and Linux:** Open the Terminal application and run the below command:
+**Mac and Linux:** Search for the Terminal in your applications list and open it. Next, copy the below command, paste it into the window (`Ctrl+V` or `Cmd+V`), and press the Enter/Return key:
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/corbindavenport/just-the-browser/HEAD/main.sh)"
@@ -63,7 +63,7 @@ Got a question? Check here first.
 
 ### Why does this project exist?
 
-Most web browsers now include brand integrations, shopping features, generative AI models that cause [performance problems or decreased battery life](https://www.neowin.net/news/mozilla-under-fire-for-firefox-ai-bloat-that-blows-up-cpu-and-drains-battery/), sponsored content, and other distractions from the core browsing experience. Just the Browser helps you disable these features and get "just the browser," with detailed guides and an automated setup script.
+Most web browsers now include brand integrations, shopping features, generative AI models that cause [performance problems or decreased battery life](https://www.neowin.net/news/mozilla-under-fire-for-firefox-ai-bloat-that-blows-up-cpu-and-drains-battery/), sponsored content, and other distractions from the core browsing experience. Just the Browser aims to remove as much of this functionality as possible with pre-made browser configurations, simple guides, and automatic installation scripts.
 
 ### What features or settings are changed?
 
@@ -88,6 +88,10 @@ No. Just the Browser uses [group policies](https://en.wikipedia.org/wiki/Group_P
 ### Do the settings stay applied?
 
 The custom settings stay applied as long as the policy features remain supported, but web browsers occasionally add, remove, or replace their policy options. You can check the browser guides or run the setup script again to get the latest configurations.
+
+### Does this install an ad blocker for me?
+
+No. If you want one, try [uBlock Origin](https://github.com/gorhill/uBlock) or [uBlock Origin Lite](https://github.com/uBlockOrigin/uBOL-home).
 
 ### Why does my browser now say it's managed by an organization?
 
