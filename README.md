@@ -10,7 +10,7 @@ This project includes configuration files for popular web browsers, documentatio
 
 ## Get started
 
-The setup script can install the configuration files in a few clicks. You can also follow the manual guides for [Firefox](firefox/README.md) or [Microsoft Edge](edge/README.md).
+The setup script can install the configuration files in a few clicks. You can also follow the manual guides for [Google Chrome](chrome/README.md), [Microsoft Edge](edge/README.md), and [Firefox](firefox/README.md).
 
 **Windows:** Open a PowerShell prompt as Administrator. You can do this by right-clicking the Windows button in the taskbar, then selecting the "Terminal (Admin)" or "PowerShell (Admin)" menu option. Next, copy the below command, paste it into the window (`Ctrl+V`), and press the Enter/Return key:
 ```
