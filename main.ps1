@@ -4,12 +4,56 @@ $OS = Get-CimInstance Win32_OperatingSystem
 $BaseURL = "https://raw.githubusercontent.com/corbindavenport/just-the-browser/HEAD/"
 $MicrosoftEdgeInstallRegistry = "$BaseURL/edge/install.reg"
 $MicrosoftEdgeUninstallRegistry = "$BaseURL/edge/uninstall.reg"
+$GoogleChromeInstallRegistry = "$BaseURL/chrome/install.reg"
+$GoogleChromeUninstallRegistry = "$BaseURL/chrome/uninstall.reg"
 $FirefoxSettings = "$BaseURL/firefox/policies.json"
 
 # Render initial interface for all pages
 function Show-Header {
     Clear-Host
     Write-Host "`nJust the Browser ($($OS.Caption) Build $($OS.BuildNumber))`n========`n"
+}
+
+# Install Google Chrome settings
+function Install-Chrome {
+    Show-Header
+    Write-Host "Downloading registry file, please wait..."
+    # Download file
+    try {
+        Invoke-WebRequest $GoogleChromeInstallRegistry -OutFile "$env:LocalAppData\chrome.reg"
+    }
+    catch {
+        Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
+        Return
+    }
+    # Install file
+    $ChromeInstall = Start-Process "reg.exe" -ArgumentList "import `"$env:LocalAppData\chrome.reg`"" -WindowStyle Hidden -Wait -PassThru
+    if ($ChromeInstall.ExitCode -eq 0) {
+        Read-Host -Prompt "Updated Google Chrome settings. Press Enter/Return to continue" | Out-Null
+    } else {
+        Read-Host -Prompt "Install failed! Press Enter/Return to continue" | Out-Null
+    }
+}
+
+# Remove Google Chrome settings
+function Uninstall-Chrome {
+    Show-Header
+    Write-Host "Downloading registry file, please wait..."
+    # Download file
+    try {
+        Invoke-WebRequest $GoogleChromeUninstallRegistry -OutFile "$env:LocalAppData\chrome.reg"
+    }
+    catch {
+        Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
+        Return
+    }
+    # Install file
+    $ChromeUninstall = Start-Process "reg.exe" -ArgumentList "import `"$env:LocalAppData\chrome.reg`"" -WindowStyle Hidden -Wait -PassThru
+    if ($ChromeUninstall.ExitCode -eq 0) {
+        Read-Host -Prompt "Removed Google Chrome settings. Press Enter/Return to continue" | Out-Null
+    } else {
+        Read-Host -Prompt "Remove failed! Press Enter/Return to continue" | Out-Null
+    }
 }
 
 # Install Microsoft Edge settings
@@ -79,6 +123,19 @@ function Uninstall-Firefox {
 function Show-Menu {
     # Create list for menu options
     $options = New-Object System.Collections.Generic.List[psobject]
+    # Google Chrome without settings applied
+    $options.Add(@{
+            Label  = "Google Chrome: Update settings"
+            Action = { Install-Chrome }
+        })
+    # Google Chrome with settings applied
+    $GoogleChromeCheck = Start-Process "reg.exe" -WindowStyle hidden -ArgumentList 'query "HKLM\SOFTWARE\Policies\Google\Chrome" /v "AIModeSettings"' -Wait -PassThru
+    if ($GoogleChromeCheck.ExitCode -eq 0) {
+        $options.Add(@{
+                Label  = "Google Chrome: Remove settings"
+                Action = { Uninstall-Chrome }
+            })
+    }
     # Microsoft Edge without settings applied
     $options.Add(@{
             Label  = "Microsoft Edge: Update settings"

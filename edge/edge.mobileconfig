@@ -9,7 +9,7 @@
 			<key>PayloadDisplayName</key>
 			<string>Microsoft Edge Settings</string>
 			<key>PayloadIdentifier</key>
-			<string>com.justhebrowser.edgesettings</string>
+			<string>com.justthebrowser.edgesettings</string>
 			<key>PayloadOrganization</key>
 			<string>justthebrowser.com</string>
 			<key>PayloadType</key>
@@ -77,7 +77,7 @@
 	<key>PayloadDisplayName</key>
 	<string>Microsoft Edge settings</string>
 	<key>PayloadIdentifier</key>
-	<string>com.justhebrowser.edgesettings</string>
+	<string>com.justthebrowser.edgesettings</string>
 	<key>PayloadOrganization</key>
 	<string>justthebrowser.com</string>
 	<key>PayloadScope</key>

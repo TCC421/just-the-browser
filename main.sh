@@ -3,6 +3,7 @@
 OS=$(uname)
 BASEURL="https://raw.githubusercontent.com/corbindavenport/just-the-browser/HEAD/"
 MICROSOFT_EDGE_MAC_CONFIG="$BASEURL/edge/edge.mobileconfig"
+GOOGLE_CHROME_MAC_CONFIG="$BASEURL/chrome/chrome.mobileconfig"
 FIREFOX_SETTINGS="$BASEURL/firefox/policies.json"
 
 # Confirm that sudo access is available
@@ -19,6 +20,27 @@ _show_header() {
     echo -e "\nJust the Browser ($OS)\n========\n"
 }
 
+# Install Google Chrome settings
+_install_chrome() {
+    _show_header
+    echo "Downloading configuration, please wait..."
+    # Download and open configuration file
+    curl -Lfs -o "$TMPDIR/chrome.mobileconfig" "$GOOGLE_CHROME_MAC_CONFIG" || { read -p "Download failed! Press Enter/Return to continue."; return; }
+    open "$TMPDIR/chrome.mobileconfig"
+    open -b "com.apple.systempreferences"
+    # Prompt user to accept file
+    echo -e "\nIn the System Settings application, navigate to General > Device Management, then open Google Chrome settings and click the Install button.\n\nIn older macOS versions with System Preferences, this is in the Profiles section.\n"
+    read -p "Enter/Return to continue."
+}
+
+# Remove Google Chrome settings
+_uninstall_chrome() {
+    _show_header
+    open -b "com.apple.systempreferences"
+    echo -e "\nIn the System Settings application, navigate to General > Device Management, then select 'Google Chrome settings' and click the remove (-) button.\n\nIn older macOS versions with System Preferences, this is in the Profiles section.\n"
+    read -p "Enter/Return to continue."
+}
+
 # Install Microsoft Edge settings
 _install_edge() {
     _show_header
@@ -28,7 +50,7 @@ _install_edge() {
     open "$TMPDIR/edge.mobileconfig"
     open -b "com.apple.systempreferences"
     # Prompt user to accept file
-    echo -e "\nIn the System Settings application, navigate to General > Device Management, then open Microsoft Edge settings and click the Install button.\n\nIn older macOS versions with System Preferences, click Profiles and select Microsoft Edge settings.\n"
+    echo -e "\nIn the System Settings application, navigate to General > Device Management, then open Microsoft Edge settings and click the Install button.\n\nIn older macOS versions with System Preferences, this is in the Profiles section.\n"
     read -p "Enter/Return to continue."
 }
 
@@ -71,6 +93,11 @@ _uninstall_firefox() {
 _main() {
     # Create list for menu options
     declare -a options=()
+    # Google Chrome
+    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Google Chrome.app" ]; then
+        options+=("Google Chrome: Update settings")
+        options+=("Google Chrome: Remove settings")
+    fi
     # Microsoft Edge
     if [ "$OS" = "Darwin" ] && [ -e "/Applications/Microsoft Edge.app" ]; then
         options+=("Microsoft Edge: Update settings")
@@ -94,6 +121,10 @@ _main() {
     _show_header
     echo -e "Select an option by typing the number, then pressing Return/Enter on your keyboard to confirm.\n\nYou will need to restart your browser for changes to take effect.\n"
     select choice in "${options[@]}"; do
+        if [ "$choice" = "Google Chrome: Update settings" ]; then
+            _install_chrome
+        elif [ "$choice" = "Google Chrome: Remove settings" ]; then
+            _uninstall_chrome
         if [ "$choice" = "Microsoft Edge: Update settings" ]; then
             _install_edge
         elif [ "$choice" = "Microsoft Edge: Remove settings" ]; then
