@@ -69,6 +69,7 @@ Just the Browser aims to remove the following functionality from popular web bro
 - **Default browser reminders:** Pop-ups or other prompts that ask you to change the default web browser.
 - **First-run experiences and data import prompts:** Browser welcome screens and their related prompts to import data automatically from other web browsers.
 - **Telemetry:** Data collection by web browsers. Crash reporting is left enabled if the browser (such as Firefox) supports it as a separate option.
+- **Startup boost:** Features that allow web browsers to start with the operating system without explicit permission.
 
 Some web browsers have additional features that could be considered "bloatware," but the default settings for Just the Browser sticks to those categories.
 

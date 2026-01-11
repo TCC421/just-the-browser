@@ -20,6 +20,58 @@
 			<integer>1</integer>
 			<key>HideFirstRunExperience</key>
 			<true/>
+            <key>ShowPDFDefaultRecommendationsEnabled</key>
+            <false/>
+            <key>SpotlightExperiencesAndRecommendationsEnabled</key>
+            <false/>
+            <key>NewTabPageSearchBox</key>
+            <string>redirect</string>
+            <key>GenAILocalFoundationalModelSettings</key>
+            <integer>1</integer>
+            <key>WebToBrowserSignInEnabled</key>
+            <false/>
+            <key>StartupBoostEnabled</key>
+            <false/>
+            <key>NewTabPageBingChatEnabled</key>
+            <false/>
+            <key>NewTabPageContentEnabled</key>
+            <false/>
+            <key>NewTabPageHideDefaultTopSites</key>
+            <true/>
+            <key>AIGenThemesEnabled</key>
+            <false/>
+            <key>AutoImportAtFirstRun</key>
+            <integer>4</integer>
+            <key>BuiltInAIAPIsEnabled</key>
+            <false/>
+            <key>BuiltInDnsClientEnabled</key>
+            <false/>
+            <key>ComposeInlineEnabled</key>
+            <false/>
+            <key>CopilotPageContext</key>
+            <false/>
+            <key>DefaultBrowserSettingEnabled</key>
+            <false/>
+            <key>DefaultBrowserSettingsCampaignEnabled</key>
+            <false/>
+            <key>DiagnosticData</key>
+            <integer>0</integer>
+            <key>EdgeShoppingAssistantEnabled</key>
+            <false/>
+            <key>Microsoft365CopilotChatIconEnabled</key>
+            <false/>
+            <key>ShowAcrobatSubscriptionButton</key>
+            <false/>
+            <key>ShowMicrosoftRewards</key>
+            <false/>
+            <key>ShowRecommendationsEnabled</key>
+            <false/>
+            <key>TabServicesEnabled</key>
+            <false/>
+            <key>TextPredictionEnabled</key>
+            <false/>
+            <key>VisualSearchEnabled</key>
+            <false/>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>
