@@ -35,7 +35,23 @@ function Install-Edge {
 
 # Remove Microsoft Edge settings
 function Uninstall-Edge {
- # TODO
+    Show-Header
+    Write-Host "Downloading registry file, please wait..."
+    # Download file
+    try {
+        Invoke-WebRequest $MicrosoftEdgeUninstallRegistry -OutFile "$env:LocalAppData\edge.reg"
+    }
+    catch {
+        Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
+        Return
+    }
+    # Install file
+    $EdgeUninstall = Start-Process "reg.exe" -ArgumentList "import `"$env:LocalAppData\edge.reg`"" -WindowStyle Hidden -Wait -PassThru
+    if ($EdgeUninstall.ExitCode -eq 0) {
+        Read-Host -Prompt "Removed Microsoft Edge settings. Press Enter/Return to continue" | Out-Null
+    } else {
+        Read-Host -Prompt "Remove failed! Press Enter/Return to continue" | Out-Null
+    }
 }
 
 # Install Firefox settings
@@ -45,11 +61,11 @@ function Install-Firefox {
     New-Item -ItemType Directory -Force -Path "$env:ProgramFiles\Mozilla Firefox\distribution" > $null
     try {
         Invoke-WebRequest $FirefoxSettings -OutFile "$env:ProgramFiles\Mozilla Firefox\distribution\policies.json"
+        Read-Host -Prompt "Updated Firefox settings. Press Enter/Return to continue" | Out-Null
     }
     catch {
-        Write-Host "Download failed!"
+        Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
     }
-    Read-Host -Prompt "Updated Firefox settings. Press Enter/Return to continue" | Out-Null
 }
 
 # Remove Firefox settings
@@ -96,7 +112,6 @@ function Show-Menu {
         })
     # Show main menu
     Show-Header
-    Write-Host "$MicrosoftEdgeConfigured"
     Write-Host "Select an option by typing the number, then pressing Return/Enter on your keyboard to confirm.`n`nYou will need to restart your browser for changes to take effect.`n"
     for ($i = 0; $i -lt $options.Count; $i++) {
         Write-Host "[$($i + 1)] $($options[$i].Label)"
