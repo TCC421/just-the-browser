@@ -2,6 +2,7 @@
 
 OS=$(uname)
 BASEURL="https://raw.githubusercontent.com/corbindavenport/just-the-browser/HEAD/"
+MICROSOFT_EDGE_MAC_CONFIG="$BASEURL/edge/edge.mobileconfig"
 FIREFOX_SETTINGS="$BASEURL/firefox/policies.json"
 
 # Confirm that sudo access is available
@@ -12,35 +13,49 @@ _confirm_sudo() {
     fi
 }
 
+# Render initial interface for all pages
+_show_header() {
+    clear
+    echo -e "\nJust the Browser ($OS)\n========\n"
+}
+
 # Install Firefox settings
 _install_firefox() {
+    _show_header
     echo "Please wait..."
     if [ "$OS" = "Darwin" ]; then
         mkdir -p "/Applications/Firefox.app/Contents/Resources/distribution/"
-        curl -Lfs -o "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" "$FIREFOX_SETTINGS" || { echo "Failed!"; return; }
+        curl -Lfs -o "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" "$FIREFOX_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
     else
         _confirm_sudo
         sudo mkdir -p "/etc/firefox/policies/"
-        sudo curl -Lfs -o "/etc/firefox/policies/policies.json" "$FIREFOX_SETTINGS" || { echo "Failed!"; return; }
+        sudo curl -Lfs -o "/etc/firefox/policies/policies.json" "$FIREFOX_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; return; }
     fi
-    echo "Updated Firefox settings."
+    read -p "Updated Firefox settings. Press Enter/Return to continue."
 }
 
 # Remove Firefox settings
 _uninstall_firefox() {
+    _show_header
     if [ "$OS" = "Darwin" ]; then
-        rm "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" || { echo "Failed!"; return; }
+        rm "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" || { read -p "Remove failed! Press Enter/Return to continue"; return; return; }
     else
          _confirm_sudo
-        sudo rm "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" || { echo "Failed!"; return; }
+        sudo rm "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" || { read -p "Remove failed! Press Enter/Return to continue."; return; return; }
     fi
-    echo "Removed Firefox settings."
+    read -p "Removed Firefox settings. Press Enter/Return to continue."; return;
 }
 
 # Main menu selection
 _main() {
     # Create list for menu options
     declare -a options=()
+    # Microsoft Edge without settings applied
+    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Microsoft Edge.app" ]; then
+        options+=("Microsoft Edge: Update settings")
+    fi
+    # Microsoft Edge with settings applied
+    # TODO
     # Firefox without settings applied
     if [ "$OS" = "Darwin" ] && [ -e "/Applications/Firefox.app" ]; then
         options+=("Mozilla Firefox: Update settings")
@@ -56,14 +71,19 @@ _main() {
     # Add exit option
     options+=("Exit")
     # Show main menu
-    echo -e "\nJust the Browser ($OS)\n========\n\nSelect an option by typing the number, then pressing Return/Enter on your keyboard to confirm.\n\nYou will need to restart your browser for changes to take effect.\n"
+    _show_header
+    echo -e "Select an option by typing the number, then pressing Return/Enter on your keyboard to confirm.\n\nYou will need to restart your browser for changes to take effect.\n"
     select choice in "${options[@]}"; do
-        if [ "$choice" = "Mozilla Firefox: Update settings" ]; then
+        if [ "$choice" = "Microsoft Edge: Update settings" ]; then
+            _install_edge
+        elif [ "$choice" = "Mozilla Firefox: Update settings" ]; then
             _install_firefox
         elif [ "$choice" = "Mozilla Firefox: Remove settings" ]; then
             _uninstall_firefox
-        else
+        elif [ "$choice" = "Exit" ]; then
             exit 0
+        else
+            read -p "Invalid option. Press Enter/Return to continue.";
         fi
     done
 }

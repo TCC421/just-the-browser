@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<!-- Configuration definitions -->
+			<key>PayloadDisplayName</key>
+			<string>Microsoft Edge Settings</string>
+			<key>PayloadIdentifier</key>
+			<string>com.justhebrowser.edgesettings</string>
+			<key>PayloadOrganization</key>
+			<string>justthebrowser.com</string>
+			<key>PayloadType</key>
+			<string>com.microsoft.Edge</string>
+			<key>PayloadUUID</key>
+			<string>a89c8b94-3fe5-47bc-a8a3-c7b6ca9eeb1e</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>HideFirstRunExperience</key>
+			<true/>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>Microsoft Edge settings</string>
+	<key>PayloadIdentifier</key>
+	<string>com.justhebrowser.edgesettings</string>
+	<key>PayloadOrganization</key>
+	<string>justthebrowser.com</string>
+	<key>PayloadScope</key>
+	<string>User</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>a89c8b94-3fe5-47bc-a8a3-c7b6ca9eeb1e</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
