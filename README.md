@@ -4,7 +4,7 @@ Just the Browser helps you remove AI features, telemetry data reporting, sponsor
 
 This project includes configuration files for popular web browsers, documentation for installing and modifying them, and easy installation scripts.
 
-![Screenshot of setup utility on Windows and macOS](screen.png)
+![Screenshot of setup utility on Windows and macOS](media/screen.png)
 
 ## Get started
 
