@@ -28,3 +28,4 @@ Windows Registry Editor Version 5.00
 "TabServicesEnabled"=dword:00000000
 "TextPredictionEnabled"=dword:00000000
 "VisualSearchEnabled"=dword:00000000
+"EdgeHistoryAISearchEnabled"=dword:00000000

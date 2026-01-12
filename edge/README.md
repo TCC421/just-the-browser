@@ -33,7 +33,7 @@ These are the policy settings in the Just the Browser configuration file.
 | Feature | Information |
 | ------- | ----------- |
 | HideFirstRunExperience | The First-run experience and the splash screen will not be shown to users when they run Microsoft Edge for the first time. |
-| ShowPDFDefaultRecommendationsEnabled | | Prevents recommendations to set Microsoft Edge as the default PDF viewer. |
+| ShowPDFDefaultRecommendationsEnabled | Prevents recommendations to set Microsoft Edge as the default PDF viewer. |
 | SpotlightExperiencesAndRecommendationsEnabled | Prevents customized background images and text, suggestions, notifications, and tips for Microsoft services. |
 | NewTabPageSearchBox | Redirects the search bar in the New Tab page to the address bar search, which uses the browser's default search engine, instead of just Bing. |
 | GenAILocalFoundationalModelSettings | Blocks download of foundation generative AI model for local inference. |
@@ -59,6 +59,7 @@ These are the policy settings in the Just the Browser configuration file.
 | TabServicesEnabled | Turns off sending URLs, page titles, and existing tab group information to the Microsoft tab organization service for suggesting tab groups and names. |
 | TextPredictionEnabled | Turns off text prediction while typing in long text fields on web pages, powered by the [Microsoft Turing service](https://www.microsoft.com/en-us/research/project/project-turing/). |
 | VisualSearchEnabled | Turns off the menu that appears when hovering the mouse over any image. Also turns off the visual search options in the context menu and sidebar search. |
+| EdgeHistoryAISearchEnabled | Turns off AI-enhanced search in the browsing history. |
 
 ### Documentation
 
