@@ -1,4 +1,8 @@
-# Microsoft Edge configuration
+---
+layout: layout.njk
+title: Microsoft Edge configuration
+permalink: "edge/index.html"
+---
 
 Microsoft Edge features can be configured with group policies. This project uses Windows Registry settings on Windows, and a configuration profile on macOS.
 

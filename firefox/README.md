@@ -1,4 +1,8 @@
-# Firefox configuration
+---
+layout: layout.njk
+title: Mozilla Firefox configuration
+permalink: "firefox/index.html"
+---
 
 Firefox features can be configured using Group Policy templates on Windows, Intune on Windows, configuration profiles on macOS, or with a custom `policies.json` file. This project uses the JSON file method.
 

@@ -1,4 +1,8 @@
-# Google Chrome configuration
+---
+layout: layout.njk
+title: Google Chrome configuration
+permalink: "chrome/index.html"
+---
 
 Google Chrome features can be configured with group policies. This project uses Windows Registry settings on Windows.
 
