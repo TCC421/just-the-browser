@@ -4,7 +4,7 @@ title: Microsoft Edge configuration
 permalink: "edge/index.html"
 ---
 
-Microsoft Edge features can be configured with group policies. This project uses Windows Registry settings on Windows, and a configuration profile on macOS.
+Microsoft Edge features can be configured with group policies. This project uses Windows Registry settings on Windows, and a Profile Manager file on macOS.
 
 You can check which policies are applied in Microsoft Edge by navigating to the `edge://policy/` page.
 

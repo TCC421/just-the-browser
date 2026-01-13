@@ -4,7 +4,7 @@ title: Google Chrome configuration
 permalink: "chrome/index.html"
 ---
 
-Google Chrome features can be configured with group policies. This project uses Windows Registry settings on Windows.
+Google Chrome features can be configured with group policies. This project uses Windows Registry settings on Windows, and a Profile Manager file on macOS.
 
 You can check which policies are applied in Google Chrome by navigating to the `chrome://policy/` page.
 
