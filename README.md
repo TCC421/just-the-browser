@@ -6,9 +6,7 @@ This project includes configuration files for popular web browsers, documentatio
 
 ![Screenshot of setup utility on Windows and macOS](media/screen.png)
 
-## Get started
-
-The setup script can install the configuration files in a few clicks. You can also follow the manual guides for [Google Chrome](chrome/README.md), [Microsoft Edge](edge/README.md), and [Firefox](firefox/README.md).
+## Install script
 
 **Windows:** Open a PowerShell prompt as Administrator. You can do this by right-clicking the Windows button in the taskbar, then selecting the "Terminal (Admin)" or "PowerShell (Admin)" menu option. Next, copy the below command, paste it into the window (`Ctrl+V`), and press the Enter/Return key:
 ```
@@ -20,3 +18,22 @@ The setup script can install the configuration files in a few clicks. You can al
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/main.sh)"
 ```
+
+## Documentation and config files
+
+See the [Google Chrome](chrome/README.md), [Microsoft Edge](edge/README.md), and [Mozilla Firefox](firefox/README.md) documentation pages for manual installation instructions, and explanations for each setting. The browser directories also contain the configuration files.
+
+Firefox uses a JSON file for all platforms. Chrome and Edge have [Windows Registry .reg](https://en.wikipedia.org/wiki/Windows_Registry#.REG_files) files for installation and removal on Windows, and [Profile Manager .mobileconfig](https://support.apple.com/guide/profile-manager/distribute-profiles-manually-pmdbd71ebc9/mac) files for macOS.
+
+## Website
+
+This repository also includes the static site generator for [justthebrowser.com](https://justthebrowser.com/), built with [Eleventy](https://www.11ty.dev/) and [Simple.css](https://simplecss.org/).
+
+With Node.js and NPM installed, you can test the site like this:
+
+```
+npm install
+npx @11ty/eleventy --serve
+```
+
+The site is compiled and deployed with the `eleventy_build.yml` GitHub Action.

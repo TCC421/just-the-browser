@@ -8,7 +8,7 @@ Just the Browser helps you remove AI features, telemetry data reporting, sponsor
 
 This project includes configuration files for popular web browsers, documentation for installing and modifying them, and easy installation scripts. Everything is [open-source on GitHub](https://github.com/corbindavenport/just-the-browser).
 
-<img alt="Just the Browser script on Windows and Mac." src="/media/screen.png" />
+<img alt="Just the Browser script on Windows and Mac" src="/media/screen.png" />
 
 ## Get started
 
@@ -92,11 +92,11 @@ No. Just the Browser uses [group policies](https://en.wikipedia.org/wiki/Group_P
 
 Yes, as long as the web browsers continue to support the settings used in the configuration files. Web browsers occasionally add, remove, or replace the settings options, so if the custom configuration breaks, try installing the latest available version.
 
-### Does this install an ad blocker for me?
+### Does this install ad blockers for me?
 
 No. If you want one, try [uBlock Origin](https://github.com/gorhill/uBlock) or [uBlock Origin Lite](https://github.com/uBlockOrigin/uBOL-home).
 
-### Why does my browser now say it's managed by an organization?
+### Why does my browser say it's managed by an organization?
 
 The group policy settings used by Just the Browser are intended for PCs managed by companies and other large organizations. Browsers like Microsoft Edge and Firefox will display a message like "Your browser is being managed by your organization" to explain why some settings are disabled.
 
