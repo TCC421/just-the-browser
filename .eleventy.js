@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
     // Ignore README.md
     eleventyConfig.ignores.add("README.md");
     // Add favicon to site
-    eleventyConfig.addPassthroughCopy({"media/favicon.ico": ""})
+    eleventyConfig.addPassthroughCopy({"media/favicon.ico": "."})
     // Add media folder to site
     eleventyConfig.addPassthroughCopy("media");
     // Modify page contents
