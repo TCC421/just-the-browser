@@ -67,7 +67,6 @@ _install_firefox() {
     _show_header
     echo "Downloading configuration, please wait..."
     if [ "$OS" = "Darwin" ]; then
-        echo "$FIREFOX_SETTINGS"
         mkdir -p "/Applications/Firefox.app/Contents/Resources/distribution/"
         curl -Lfs -o "/Applications/Firefox.app/Contents/Resources/distribution/policies.json" "$FIREFOX_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
     else
