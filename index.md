@@ -27,7 +27,7 @@ The setup script can install the configuration files in a few clicks. You can al
 
 ## Download web browsers
 
-Start here if you don't have your preferred web browser installed.
+Start here if you don't have your preferred web browser installed. You can install the configuration files afterwards.
 
 ### Google Chrome
 
@@ -76,7 +76,7 @@ Just the Browser aims to remove the following functionality from popular web bro
 
 The exact list of features modified for each browser can be found on the pages for [Google Chrome](/chrome), [Microsoft Edge](/edge), and [Firefox](/firefox).
 
-### Can I change or revert the changes later?
+### Can I change or remove the changes?
 
 Yes. The browser guides include steps for removing the changes or modifying them. The automated script can also remove the settings.
 
