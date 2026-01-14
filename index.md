@@ -60,7 +60,7 @@ Not sure which link to use? Try the [official download page](https://www.microso
 
 ## Questions and answers
 
-Got a question? Check here first, and if you still need help, [create an issue on GitHub](https://github.com/corbindavenport/just-the-browser/issues) or [join the Discord](https://discord.com/invite/59wfy5cNHw).
+Got a question? Check here first, and if you still need help, [create an issue on GitHub](https://github.com/corbindavenport/just-the-browser/issues) or [join the Discord](https://discord.com/invite/tqJDRsmQVn).
 
 ### What features or settings are changed?
 
