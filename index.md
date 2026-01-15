@@ -76,9 +76,9 @@ Just the Browser aims to remove the following functionality from popular web bro
 
 The exact list of features modified for each browser can be found on the pages for [Google Chrome](/chrome), [Microsoft Edge](/edge), and [Firefox](/firefox).
 
-### Can I change or remove the changes?
+### Can I change or remove the settings?
 
-Yes. The browser guides include steps for removing the changes or modifying them. The automated script can also remove the settings.
+Yes. The browser guides include steps for removing the configurations, and the automated script can also do it. The browser guides explain each setting, so you can add, remove, or modify the files before you install them.
 
 ### Which web browsers are supported?
 

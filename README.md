@@ -27,7 +27,7 @@ Firefox uses a JSON file for all platforms. Chrome and Edge have [Windows Regist
 
 ## Website
 
-This repository also includes the static site generator for [justthebrowser.com](https://justthebrowser.com/), built with [Eleventy](https://www.11ty.dev/) and [Simple.css](https://simplecss.org/).
+This repository also includes the static site generator for [justthebrowser.com](https://justthebrowser.com/), built with [Eleventy](https://www.11ty.dev/) and [Simple.css](https://simplecss.org/). The icons are from [Bootstrap Icons](https://icons.getbootstrap.com/).
 
 With Node.js and NPM installed, you can test the site like this:
 
