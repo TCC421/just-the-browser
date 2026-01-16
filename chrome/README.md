@@ -34,7 +34,8 @@ To remove the custom configuration, open the Device Management settings (or Prof
 4. Copy the file to the new folder: `sudo cp ./managed_policies.json /etc/opt/chrome/policies/managed`
 5. Restart Chrome.
 
-To remove the custom configuration, delete the `policies.json` file from the distribution folder and restart Firefox. You can do that in the Terminal: `sudo rm /etc/firefox/policies/policies.json`
+To remove the custom configuration, delete the `policies.json` file from the distribution folder and restart Firefox. You can do that in the Terminal: `sudo rm /etc/opt/chrome/policies/managed/managed_policies.json`
+
 ### Browser settings
 
 These are the policy settings in the Just the Browser configuration file.
