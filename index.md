@@ -104,6 +104,10 @@ No. If you want one, try [uBlock Origin](https://github.com/gorhill/uBlock) or [
 
 The group policy settings used by Just the Browser are intended for PCs managed by companies and other large organizations. Browsers like Microsoft Edge and Firefox will display a message like "Your browser is being managed by your organization" to explain why some settings are disabled.
 
+### How do I know the settings are applied?
+
+You can open `about:policies` in Firefox or `chrome://policy` in Chrome and Edge to see a list of active group policy settings.
+
 ### Why not just use an alternative web browser?
 
 You can do that! However, switching to alternative web browsers like Vivaldi, SeaMonkey, Waterfox, or LibreWolf can have other downsides. They are not always available on the same platforms, and they can lag behind mainstream browsers in security updates and engine upgrades. Just the Browser aims to make mainstream web browsers more tolerable, while still retaining their existing benefits.
