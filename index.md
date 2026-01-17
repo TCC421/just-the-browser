@@ -82,7 +82,7 @@ Yes. The browser guides include steps for removing the configurations, and the a
 
 ### Which web browsers are supported?
 
-Just the Browser has configuration files and setup scripts for Google Chrome, Microsoft Edge, and Mozilla Firefox. However, [Chrome on Linux](https://github.com/corbindavenport/just-the-browser/issues/2) and [Edge on Linux](https://github.com/corbindavenport/just-the-browser/issues/1) are not currently supported.
+Just the Browser has configuration files and setup scripts for Google Chrome, Microsoft Edge, and Mozilla Firefox. Chromium builds on Linux are also supported. [Edge on Linux](https://github.com/corbindavenport/just-the-browser/issues/1) is not currently supported.
 
 ### Can I install this on my phone or tablet?
 

@@ -28,13 +28,21 @@ To remove the custom configuration, open the Device Management settings (or Prof
 
 ### Linux installation
 
+These instructions work for both Chromium and Google Chrome. You can check what you're running by opening `chrome://version` and checking if it says "Chromium" or "Google Chrome" at the top-right corner of the page.
+
 1. Open the [configuration file](https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/chrome/managed_policies.json) and save it (`Ctrl+S`) anywhere on your computer. Make sure the file is called "policies.json" (without the quotes).
 2. Open a new Terminal window in the directory where the file is located. For example, if it's in your Downloads folder, open a Terminal and run `cd ~/Downloads` to switch to the Downloads directory.
-3. Create the Chrome policies directory with this command: `sudo mkdir -p /etc/opt/chrome/policies/managed`
-4. Copy the file to the new folder: `sudo cp ./managed_policies.json /etc/opt/chrome/policies/managed`
-5. Restart Chrome.
+3. Create the managed policies directory with one of the below commands.
+    - For Google Chrome: `sudo mkdir -p /etc/opt/chrome/policies/managed`
+    - For Chromium: `sudo mkdir -p /etc/chromium/policies/managed`
+4. Copy the file to the new folder with one of the below commands.
+    - For Google Chrome: `sudo cp ./managed_policies.json /etc/opt/chrome/policies/managed`
+    - For Chromium: `sudo cp ./managed_policies.json /etc/chromium/policies/managed`
+5. Restart the browser.
 
-To remove the custom configuration, delete the `policies.json` file from the distribution folder and restart Firefox. You can do that in the Terminal: `sudo rm /etc/opt/chrome/policies/managed/managed_policies.json`
+To remove the custom configuration, delete the `managed_policies.json` file from the managed policies directory and restart the browser. You can do that with one of the below commands.
+ - For Google Chrome: `sudo rm /etc/opt/chrome/policies/managed/managed_policies.json`
+ - For Chromium: `sudo rm /etc/chromium/policies/managed/managed_policies.json`
 
 ### Browser settings
 

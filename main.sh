@@ -55,6 +55,24 @@ _uninstall_chrome() {
     fi
 }
 
+# Install Chromium settings
+_install_chromium() {
+    _show_header
+    echo "Downloading configuration, please wait..."
+    _confirm_sudo
+    sudo mkdir -p "/etc/chromium/policies/managed"
+    sudo curl -Lfs -o "/etc/chromium/policies/managed/managed_policies.json" "$CHROME_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
+    read -p "Installed Chromium settings. Press Enter/Return to continue."
+}
+
+# Remove Google Chrome settings
+_uninstall_chromium() {
+    _show_header
+    _confirm_sudo
+    sudo rm "/etc/chromium/policies/managed/managed_policies.json" || { read -p "Remove failed! Press Enter/Return to continue."; return; }
+    read -p "Removed Chromium settings. Press Enter/Return to continue."
+}
+
 # Install Microsoft Edge settings
 _install_edge() {
     _show_header
@@ -119,6 +137,14 @@ _main() {
     elif [ "$OS" = "Linux" ] && [ -e "/etc/opt/chrome/policies/managed/managed_policies.json" ]; then
         options+=("Google Chrome: Remove settings")
     fi
+    # Chromium without settings applied
+    if [ "$OS" = "Linux" ] && [ -x "$(command -v chromium-browser)" ]; then
+        options+=("Chromium: Update settings")
+    fi
+    # Chromium with settings already applied
+    if [ "$OS" = "Linux" ] && [ -e "/etc/chromium/policies/managed/managed_policies.json" ]; then
+        options+=("Chromium: Remove settings")
+    fi
     # Microsoft Edge
     if [ "$OS" = "Darwin" ] && [ -e "/Applications/Microsoft Edge.app" ]; then
         options+=("Microsoft Edge: Update settings")
@@ -146,6 +172,10 @@ _main() {
             _install_chrome
         elif [ "$choice" = "Google Chrome: Remove settings" ]; then
             _uninstall_chrome
+        elif [ "$choice" = "Chromium: Update settings" ]; then
+            _install_chromium
+        elif [ "$choice" = "Chromium: Remove settings" ]; then
+            _uninstall_chromium
         elif [ "$choice" = "Microsoft Edge: Update settings" ]; then
             _install_edge
         elif [ "$choice" = "Microsoft Edge: Remove settings" ]; then
