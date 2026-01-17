@@ -7,5 +7,6 @@
   "HistorySearchSettings": 2,
   "TabCompareSettings": 2,
   "BuiltInDnsClientEnabled": false,
-  "DefaultBrowserSettingEnabled": false
+  "DefaultBrowserSettingEnabled": false,
+  "DevToolsGenAiSettings": 2
 }

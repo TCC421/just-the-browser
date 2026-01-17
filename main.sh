@@ -105,9 +105,16 @@ _uninstall_firefox() {
 _main() {
     # Create list for menu options
     declare -a options=()
-    # Google Chrome
+    # Google Chrome without settings applied
     if [ "$OS" = "Darwin" ] && [ -e "/Applications/Google Chrome.app" ]; then
         options+=("Google Chrome: Update settings")
+    elif [ "$OS" = "Linux" ] && [ -x "$(command -v google-chrome)" ]; then
+        options+=("Google Chrome: Update settings")
+    fi
+    # Google Chrome with settings already applied
+    if [ "$OS" = "Darwin" ] && [ -e "/Applications/Google Chrome.app" ]; then
+        options+=("Google Chrome: Remove settings")
+    elif [ "$OS" = "Linux" ] && [ -e "/etc/opt/chrome/policies/managed/managed_policies.json" ]; then
         options+=("Google Chrome: Remove settings")
     fi
     # Microsoft Edge
