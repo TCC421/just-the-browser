@@ -25,6 +25,16 @@ The setup script can install the configuration files in a few clicks. You can al
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/main.sh)"
 ```
 
+## Subscribe to updates
+
+You can subscribe to the RSS/Atom releases feed to know when there are important changes to the configuration files, documentation, and scripts:
+
+```
+https://github.com/corbindavenport/just-the-browser/releases.atom
+```
+
+This feed can be used with [Feedly](https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fgithub.com%2Fcorbindavenport%2Fjust-the-browser%2Freleases.atom), [Inoreader](https://www.inoreader.com/?add_feed=https://github.com/corbindavenport/just-the-browser/releases.atom), [The Old Reader](https://theoldreader.com/feeds/subscribe?url=https://github.com/corbindavenport/just-the-browser/releases.atom), [Feedbin](https://feedbin.me/?subscribe=https://github.com/corbindavenport/just-the-browser/releases.atom), or any other reader tool. You can also subscribe to new releases with your GitHub account by clicking the Watch button at the top of the page, then selecting Custom > New releases.
+
 ## Download web browsers
 
 Start here if you don't have your preferred web browser installed. You can install the configuration files afterwards.
