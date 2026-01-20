@@ -15,9 +15,14 @@ module.exports = function (eleventyConfig) {
         const dom = new JSDOM(content);
         // Set target blank attributes for all external links
         dom.window.document.querySelectorAll('a').forEach(function (el) {
-            // Change download and donate links to buttons
-            if (el.href.startsWith('https://dl.google.com/') || el.href.startsWith('https://download.mozilla.org/') || el.href.startsWith('https://go.microsoft.com/') || el.href.startsWith('https://msedge.sf.dl.delivery.mp.microsoft.com/') || el.href.startsWith('https://www.patreon.com/') || el.href.startsWith('https://www.paypal.com/') || el.href.startsWith('https://cash.app/$corbdav')) {
-                el.classList.add('button')
+            // Change download links to buttons
+            if (el.href.startsWith('https://dl.google.com/') || el.href.startsWith('https://download.mozilla.org/') || el.href.startsWith('https://go.microsoft.com/') || el.href.startsWith('https://msedge.sf.dl.delivery.mp.microsoft.com/')) {
+                el.classList.add('button');
+            }
+            // Change donate links to full-width donate buttons
+            if (el.href.startsWith('https://www.patreon.com/') || el.href.startsWith('https://www.paypal.com/') || el.href.startsWith('https://cash.app/')) {
+                el.classList.add('button');
+                el.setAttribute('style', 'width: 100%; text-align: center;');
             }
             // Open all external links in new tab
             if (el.href.startsWith('https://') || el.href.startsWith('http://')) {
