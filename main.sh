@@ -8,6 +8,11 @@ FIREFOX_MAC_CONFIG="$BASEURL/firefox/firefox.mobileconfig"
 FIREFOX_SETTINGS="$BASEURL/firefox/policies.json"
 CHROME_SETTINGS="$BASEURL/chrome/managed_policies.json"
 
+# Generate a temporary directory on macOS instead of broken default $TMPDIR
+if [ "$OS" = "Darwin" ]; then
+    TMPDIR=`mktemp -d`
+fi
+
 # Confirm that sudo access is available
 _confirm_sudo() {
     if [ "$EUID" != 0 ]; then
