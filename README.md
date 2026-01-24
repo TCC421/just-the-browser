@@ -24,9 +24,7 @@ The setup script can install the configuration files in a few clicks. You can al
 
 ## Documentation and config files
 
-See the [Google Chrome](chrome/README.md), [Microsoft Edge](edge/README.md), and [Mozilla Firefox](firefox/README.md) documentation pages for manual installation instructions, and explanations for each setting. The browser directories also contain the configuration files.
-
-Firefox uses a JSON file for all platforms. Chrome and Edge have [Windows Registry .reg](https://en.wikipedia.org/wiki/Windows_Registry#.REG_files) files for installation and removal on Windows, and [Profile Manager .mobileconfig](https://support.apple.com/guide/profile-manager/distribute-profiles-manually-pmdbd71ebc9/mac) files for macOS.
+See the [Google Chrome](chrome/README.md), [Microsoft Edge](edge/README.md), and [Mozilla Firefox](firefox/README.md) documentation pages for manual installation instructions, and explanations for each setting. The browser directories also contain the configuration files, which are either JSON files, [Windows Registry .reg](https://en.wikipedia.org/wiki/Windows_Registry#.REG_files) files for Windows, or [Profile Manager .mobileconfig](https://support.apple.com/guide/profile-manager/distribute-profiles-manually-pmdbd71ebc9/mac) files for macOS.
 
 ## Website
 
