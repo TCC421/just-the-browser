@@ -116,12 +116,9 @@ No. If you want one, try [uBlock Origin](https://github.com/gorhill/uBlock) or [
 
 ### Does this disable DNS-over-HTTPS and DNS-over-TLS?
 
-No. Turning off the built-in DNS client in web browsers is sometimes worse for privacy and security, especially if the alternative is plain text queries to your internet service provider (ISP). This also breaks the ability to set your own DNS server for each browser. 
+No. Turning off the built-in DNS client in web browsers is sometimes worse for privacy and security, especially if the alternative is plain text queries to your internet service provider (ISP).
 
-You can still change the DNS behavior from the browsers' settings pages:
- - Google Chrome: `chrome://settings/security`
- - Mozilla Firefox: `about:preferences#privacy`
- - Microsoft Edge: `edge://settings/privacy/security`
+You can change the DNS settings yourself from `chrome://settings/security` in Google Chrome, `about:preferences#privacy` in Firefox, and `edge://settings/privacy/security` in Microsoft Edge.
 
 ### Why does my browser say it's managed by an organization?
 
