@@ -4,19 +4,20 @@ title: Mozilla Firefox configuration
 permalink: "firefox/index.html"
 ---
 
-Firefox features can be configured using Group Policy templates on Windows, Intune on Windows, configuration profiles on macOS, or with a custom `policies.json` file. This project uses the JSON file method on Windows and Firefox, and a Profile Manager file on macOS.
+Firefox features can be configured using Group Policy templates on Windows, Intune on Windows, configuration profiles on macOS, or with a custom `policies.json` file. This project uses the JSON file method on Linux, Windows Registry settings on Windows, and a Profile Manager file on macOS.
 
 You can check which policies are applied in Firefox by navigating to the `about:policies` page.
 
 ### Windows installation
 
-1. Open the [configuration file](https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/firefox/policies.json) and save it (`Ctrl+S`) anywhere on your computer.
-2. Open the File Explorer and find where the Firefox executable is installed. This should be `C:\Program Files\Mozilla Firefox` on most PCs.
-3. In the same directory as Firefox, create a new folder (New menu > Folder) called "distribution" without the quotes, if it does not already exist.
-4. Move the configuration file to the distribution folder, and make sure it is called "policies.json" (without the quotes).
+1. Open the [registry file for installation](https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/firefox/install.reg) and save it (`Ctrl+S`) anywhere on your computer.
+2. In the File Explorer, right-click the file and select Open with > Registry Editor.
+3. Follow the prompts to install the registry keys to the Windows Registry.
 5. Restart Firefox.
 
-To remove the custom configuration, delete the `policies.json` file from the distribution folder and restart Firefox.
+To remove the custom configuration, follow the same steps with the [registry file for uninstallation](https://raw.githubusercontent.com/corbindavenport/just-the-browser/main/firefox/uninstall.reg). This will remove the modified registry keys from your system.
+
+If the custom settings are still active, you may have used the JSON file method for installation. Find your Firefox installation directory, such as `C:\Program Files\Mozilla Firefox`, and check if it contains a "distribution" directory. If there is a `policies.json` file in the distribution directory, delete it.
 
 ### macOS installation
 

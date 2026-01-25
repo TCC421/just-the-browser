@@ -6,12 +6,27 @@ $MicrosoftEdgeInstallRegistry = "$BaseURL/edge/install.reg"
 $MicrosoftEdgeUninstallRegistry = "$BaseURL/edge/uninstall.reg"
 $GoogleChromeInstallRegistry = "$BaseURL/chrome/install.reg"
 $GoogleChromeUninstallRegistry = "$BaseURL/chrome/uninstall.reg"
+$FirefoxInstallRegistry = "$BaseURL/firefox/install.reg"
+$FirefoxUninstallRegistry = "$BaseURL/firefox/uninstall.reg"
 $FirefoxSettings = "$BaseURL/firefox/policies.json"
 
 # Render initial interface for all pages
 function Show-Header {
     Clear-Host
     Write-Host "`nJust the Browser ($($OS.Caption) Build $($OS.BuildNumber))`n========`n"
+}
+
+# Remove Firefox JSON file if it exists, so it does not conflict with registry entries
+# Previous versions of Just the Browser used the JSON method
+function Uninstall-FirefoxJSON {
+    Param(
+        [Parameter(Position= 0, Mandatory= $true)]
+        [String]$InstallPath
+    )
+    if (Test-Path "$InstallPath\distribution\policies.json") {
+        Write-Host "Previous Firefox policies.json file found, deleting..."
+        Remove-Item -Path "$InstallPath\distribution\policies.json" -Force
+    }
 }
 
 # Install Google Chrome settings
@@ -105,14 +120,23 @@ function Install-Firefox {
         [String]$InstallPath
     )
     Show-Header
-    Write-Host "Detected Firefox installation directory: $InstallPath`n`nDownloading configuration file, please wait..."
-    New-Item -ItemType Directory -Force -Path "$InstallPath\distribution" > $null
+    # Delete old JSON configuration if it exists
+    Uninstall-FirefoxJSON "$InstallPath"
+    # Download file
+    Write-Host "Downloading registry file, please wait..."
     try {
-        Invoke-WebRequest $FirefoxSettings -OutFile "$InstallPath\distribution\policies.json"
-        Read-Host -Prompt "Updated Firefox settings. Press Enter/Return to continue" | Out-Null
+        Invoke-WebRequest $FirefoxInstallRegistry -OutFile "$env:LocalAppData\firefox.reg"
     }
     catch {
         Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
+        Return
+    }
+    # Install file
+    $FirefoxInstall = Start-Process "reg.exe" -ArgumentList "import `"$env:LocalAppData\firefox.reg`"" -WindowStyle Hidden -Wait -PassThru
+    if ($FirefoxInstall.ExitCode -eq 0) {
+        Read-Host -Prompt "Updated Mozilla Firefox settings. Press Enter/Return to continue" | Out-Null
+    } else {
+        Read-Host -Prompt "Install failed! Press Enter/Return to continue" | Out-Null
     }
 }
 
@@ -123,9 +147,23 @@ function Uninstall-Firefox {
         [String]$InstallPath
     )
     Show-Header
-    Write-Host "Detected Firefox installation directory: $InstallPath`n"
-    Remove-Item -Path "$InstallPath\distribution\policies.json" -Force
-    Read-Host -Prompt "Removed Firefox settings. Press Enter/Return to continue" | Out-Null
+    # Delete old JSON configuration if it exists
+    Uninstall-FirefoxJSON "$InstallPath"
+    # Download file
+    try {
+        Invoke-WebRequest $FirefoxUninstallRegistry -OutFile "$env:LocalAppData\firefox.reg"
+    }
+    catch {
+        Read-Host -Prompt "Download failed! Press Enter/Return to continue" | Out-Null
+        Return
+    }
+    # Install file
+    $FirefoxUninstall = Start-Process "reg.exe" -ArgumentList "import `"$env:LocalAppData\firefox.reg`"" -WindowStyle Hidden -Wait -PassThru
+    if ($FirefoxUninstall.ExitCode -eq 0) {
+        Read-Host -Prompt "Removed Mozilla Firefox settings. Press Enter/Return to continue" | Out-Null
+    } else {
+        Read-Host -Prompt "Remove failed! Press Enter/Return to continue" | Out-Null
+    }
 }
 
 # Main menu selection
@@ -176,7 +214,8 @@ function Show-Menu {
                 Action = { Install-Firefox "$FirefoxPath" }
             })
             # Firefox with settings already applied
-            if (Test-Path "$FirefoxPath\distribution\policies.json") {
+            # This script previously used the JSON file for Firefox, so that must be checked in addition to the registry method
+            if ((Test-Path "$FirefoxPath\distribution\policies.json") -or (Test-Path "HKLM:\SOFTWARE\Policies\Mozilla\Firefox\FirefoxHome")) {
                 $options.Add(@{
                         Label  = "Mozilla Firefox: Remove settings"
                         Action = { Uninstall-Firefox "$FirefoxPath" }
