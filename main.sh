@@ -214,7 +214,7 @@ _main() {
         options+=("Chromium: Remove settings")
     fi
     # Chromium Flatpak
-    if [ "$OS" = "Linux" ] && [ -x "$(command -v flatpak)" ] && flatpak list | grep -q chromium; then
+    if [ "$OS" = "Linux" ] && [ -x "$(command -v flatpak)" ] && flatpak list | grep -q "org.chromium.Chromium"; then
         options+=("Chromium Flatpak: Update settings")
         options+=("Chromium Flatpak: Remove settings")
     fi
