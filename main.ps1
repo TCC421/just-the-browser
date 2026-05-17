@@ -218,7 +218,7 @@ function Show-Menu {
         # Find the current version installed, like: 147.0.1 (AArch64 en-US)
         $FirefoxVersion = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Mozilla\Mozilla Firefox" -ErrorAction SilentlyContinue).CurrentVersion
         # Find the registry values for the specified version
-        if (Test-Path "HKLM:\SOFTWARE\Mozilla\Mozilla Firefoxx\$FirefoxVersion\Main") {
+        if (Test-Path "HKLM:\SOFTWARE\Mozilla\Mozilla Firefox\$FirefoxVersion\Main") {
             # Finds the installation path, like: C:\Program Files\Mozilla Firefox
             $FirefoxPath = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Mozilla\Mozilla Firefox\$FirefoxVersion\Main" -ErrorAction SilentlyContinue)."Install Directory"
             # Firefox without settings alreay applied
