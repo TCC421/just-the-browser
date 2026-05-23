@@ -117,8 +117,9 @@ _uninstall_chromium() {
 _install_chromium_flatpak() {
     _show_header
     FLATPAK_ARCH=$(flatpak --default-arch)
-    mkdir -p "$HOME/.local/share/flatpak/extension/org.chromium.Chromium.Extension.just-the-browser/$FLATPAK_ARCH/1/policies/managed/"
-    curl -Lfs -o "$HOME/.local/share/flatpak/extension/org.chromium.Chromium.Extension.just-the-browser/$FLATPAK_ARCH/1/policies/managed/managed_policies.json" "$CHROME_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
+    FLATPAK_PATH="$HOME/.local/share/flatpak/extension/org.chromium.Chromium.Extension.just-the-browser/$FLATPAK_ARCH/1/policies/managed"
+    mkdir -p "$FLATPAK_PATH"
+    curl -Lfs -o "$FLATPAK_PATH/managed_policies.json" "$CHROME_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
     read -p "Installed Chromium settings. Press Enter/Return to continue."
 }
 
@@ -126,7 +127,8 @@ _install_chromium_flatpak() {
 _uninstall_chromium_flatpak() {
     _show_header
     FLATPAK_ARCH=$(flatpak --default-arch)
-    rm "$HOME/.local/share/flatpak/extension/org.chromium.Chromium.Extension.just-the-browser/$FLATPAK_ARCH/1/policies/managed/managed_policies.json" || { read -p "Remove failed! Press Enter/Return to continue."; return; }
+    FLATPAK_PATH="$HOME/.local/share/flatpak/extension/org.chromium.Chromium.Extension.just-the-browser/$FLATPAK_ARCH/1/policies/managed"
+    rm "$FLATPAK_PATH/managed_policies.json" || { read -p "Remove failed! Press Enter/Return to continue."; return; }
     read -p "Removed Chromium settings. Press Enter/Return to continue."
 }
 
@@ -187,6 +189,25 @@ _uninstall_firefox() {
     fi
 }
 
+# Install Firefox settings for Flatpak
+_install_firefox_flatpak() {
+    _show_header
+    FLATPAK_ARCH=$(flatpak --default-arch)
+    FLATPAK_PATH="$HOME/.local/share/flatpak/extension/org.mozilla.firefox.systemconfig/$FLATPAK_ARCH/stable/policies"
+    mkdir -p "$FLATPAK_PATH"
+    curl -Lfs -o "$FLATPAK_PATH/policies.json" "$FIREFOX_SETTINGS" || { read -p "Download failed! Press Enter/Return to continue."; return; }
+    read -p "Installed Firefox settings. Press Enter/Return to continue."
+}
+
+# Remove Firefox settings for Flatpak
+_uninstall_firefox_flatpak() {
+    _show_header
+    FLATPAK_ARCH=$(flatpak --default-arch)
+    FLATPAK_PATH="$HOME/.local/share/flatpak/extension/org.mozilla.firefox.systemconfig/$FLATPAK_ARCH/stable/policies"
+    rm "$FLATPAK_PATH/policies.json" || { read -p "Remove failed! Press Enter/Return to continue."; return; }
+    read -p "Removed Firefox settings. Press Enter/Return to continue."
+}
+
 # Main menu selection
 _main() {
     # Create list for menu options
@@ -235,6 +256,11 @@ _main() {
     elif [ "$OS" = "Linux" ] && [ -e "/etc/firefox/policies/policies.json" ]; then
         options+=("Mozilla Firefox: Remove settings")
     fi
+    # Firefox Flatpak
+    if [ "$OS" = "Linux" ] && [ -x "$(command -v flatpak)" ] && flatpak list | grep -q "org.chromium.Chromium"; then
+        options+=("Firefox Flatpak: Update settings")
+        options+=("Firefox Flatpak: Remove settings")
+    fi
     # Add exit option
     options+=("Exit")
     # Show main menu
@@ -261,6 +287,10 @@ _main() {
             _install_firefox
         elif [ "$choice" = "Mozilla Firefox: Remove settings" ]; then
             _uninstall_firefox
+        elif [ "$choice" = "Firefox Flatpak: Update settings" ]; then
+            _install_firefox_flatpak
+        elif [ "$choice" = "Firefox Flatpak: Remove settings" ]; then
+            _uninstall_firefox_flatpak
         elif [ "$choice" = "Exit" ]; then
             exit 0
         else
