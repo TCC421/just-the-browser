@@ -29,6 +29,7 @@ Windows Registry Editor Version 5.00
 "TextPredictionEnabled"=dword:00000000
 "VisualSearchEnabled"=dword:00000000
 "EdgeHistoryAISearchEnabled"=dword:00000000
+"CopilotAddressBarSuggestionsEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge]
 "DisplayName"="Just the Browser configuration - Microsoft Edge"

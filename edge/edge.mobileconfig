@@ -74,6 +74,8 @@
             <false/>
             <key>EdgeHistoryAISearchEnabled</key>
             <false/>
+            <key>CopilotAddressBarSuggestionsEnabled</key>
+            <false/>
 		</dict>
         <!-- Microsoft Edge Beta -->
 		<dict>
@@ -144,6 +146,8 @@
             <key>VisualSearchEnabled</key>
             <false/>
             <key>EdgeHistoryAISearchEnabled</key>
+            <false/>
+            <key>CopilotAddressBarSuggestionsEnabled</key>
             <false/>
 		</dict>
         <!-- Microsoft Edge Dev -->
@@ -216,6 +220,8 @@
             <false/>
             <key>EdgeHistoryAISearchEnabled</key>
             <false/>
+            <key>CopilotAddressBarSuggestionsEnabled</key>
+            <false/>
 		</dict>
         <!-- Microsoft Edge Canary -->
 		<dict>
@@ -286,6 +292,8 @@
             <key>VisualSearchEnabled</key>
             <false/>
             <key>EdgeHistoryAISearchEnabled</key>
+            <false/>
+            <key>CopilotAddressBarSuggestionsEnabled</key>
             <false/>
 		</dict>
 	</array>
