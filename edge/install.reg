@@ -13,6 +13,7 @@ Windows Registry Editor Version 5.00
 "NewTabPageHideDefaultTopSites"=dword:00000001
 "AIGenThemesEnabled"=dword:00000000
 "AutoImportAtFirstRun"=dword:00000004
+"ImportOnEachLaunch"=dword:00000000
 "BuiltInAIAPIsEnabled"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "ComposeInlineEnabled"=dword:00000000

@@ -45,7 +45,8 @@ These are the policy settings in the Just the Browser configuration file.
 | NewTabPageContentEnabled | Turns off content from MSN and other Microsoft services on the New Tab page. |
 | NewTabPageHideDefaultTopSites | Turns off sponsored site links in the Top Sites on the New Tab page. |
 | AIGenThemesEnabled | Turns off DALL-E browser themes. |
-| AutoImportAtFirstRun | Blocks automatic data import from other web browsers. |
+| AutoImportAtFirstRun | Blocks automatic data import from other web browsers when Edge is opened for the first time. |
+| ImportOnEachLaunch | Blocks additional prompts to import data from other web browsers. |
 | BuiltInAIAPIsEnabled | Blocks web pages from using AI APIs, including the LanguageModel API, Summarization API, Writer API, and Rewriter API. |
 | BuiltInDnsClientEnabled | Forces Edge to use the host operating system's DNS client, instead of the built-in DNS client. The built-in client is still used for DNS-over-HTTPS requests. |
 | ComposeInlineEnabled | Blocks the 'Rewrite with Copilot' feature. |

@@ -42,6 +42,8 @@
             <false/>
             <key>AutoImportAtFirstRun</key>
             <integer>4</integer>
+            <key>ImportOnEachLaunch</key>
+            <false/>
             <key>BuiltInAIAPIsEnabled</key>
             <false/>
             <key>BuiltInDnsClientEnabled</key>
@@ -121,6 +123,8 @@
             <false/>
             <key>AutoImportAtFirstRun</key>
             <integer>4</integer>
+            <key>ImportOnEachLaunch</key>
+            <false/>
             <key>BuiltInAIAPIsEnabled</key>
             <false/>
             <key>BuiltInDnsClientEnabled</key>
@@ -200,6 +204,8 @@
             <false/>
             <key>AutoImportAtFirstRun</key>
             <integer>4</integer>
+            <key>ImportOnEachLaunch</key>
+            <false/>
             <key>BuiltInAIAPIsEnabled</key>
             <false/>
             <key>BuiltInDnsClientEnabled</key>
@@ -279,6 +285,8 @@
             <false/>
             <key>AutoImportAtFirstRun</key>
             <integer>4</integer>
+            <key>ImportOnEachLaunch</key>
+            <false/>
             <key>BuiltInAIAPIsEnabled</key>
             <false/>
             <key>BuiltInDnsClientEnabled</key>
