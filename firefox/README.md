@@ -101,6 +101,7 @@ Firefox 149 and later uses the `AIControls` setting to configure generative AI f
 | SearchEngines | Removes Perplexity AI as a default search engine. |
 | IPProtectionAvailable | The built-in Firefox VPN is [normally blocked](https://support.mozilla.org/en-US/kb/built-in-vpn?as=u&utm_source=inproduct#:~:text=Enterprise%20note) when enterprise policies are active. This setting allows it to function again. |
 | FirefoxSuggest | The sponsored suggestions as you type in the address bar are disabled. |
+| VisualSearchEnabled | Hides the 'Search Image with Google Lens' menu when right-clicking on an image. The menu option is already hidden by default when Google is not the default search engine. |
 
 ### Documentation
 

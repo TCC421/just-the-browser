@@ -114,6 +114,8 @@
 				<key>SponsoredSuggestions</key>
 				<false/>
 			</dict>
+			<key>VisualSearchEnabled</key>
+			<false/>
 		</dict>
 		<!-- Firefox Developer Edition -->
 		<dict>
@@ -225,6 +227,8 @@
 				<key>SponsoredSuggestions</key>
 				<false/>
 			</dict>
+			<key>VisualSearchEnabled</key>
+			<false/>
 		</dict>
 		<!-- Firefox Nightly -->
 		<dict>
@@ -336,6 +340,8 @@
 				<key>SponsoredSuggestions</key>
 				<false/>
 			</dict>
+			<key>VisualSearchEnabled</key>
+			<false/>
 		</dict>
 	</array>
 	<!-- Configuration metadata -->

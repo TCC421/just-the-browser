@@ -53,6 +53,7 @@
     "IPProtectionAvailable": true,
     "FirefoxSuggest": {
       "SponsoredSuggestions": false
-    }
+    },
+    "VisualSearchEnabled": false
   }
 }
