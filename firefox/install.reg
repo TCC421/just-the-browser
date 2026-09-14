@@ -49,6 +49,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox\SearchEngines\Remove]
 "1"="Perplexity"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox\FirefoxSuggest]
+"SponsoredSuggestions"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox]
 "DisplayName"="Just the Browser configuration - Mozilla Firefox"
 "URLInfoAbout"="https://justthebrowser.com/"

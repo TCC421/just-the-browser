@@ -50,6 +50,9 @@
         "Perplexity"
       ]
     },
-    "IPProtectionAvailable": true
+    "IPProtectionAvailable": true,
+    "FirefoxSuggest": {
+      "SponsoredSuggestions": false
+    }
   }
 }

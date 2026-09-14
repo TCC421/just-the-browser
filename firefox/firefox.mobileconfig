@@ -109,6 +109,11 @@
 			</dict>
 			<key>IPProtectionAvailable</key>
 			<true/>
+			<key>FirefoxSuggest</key>
+			<dict>
+				<key>SponsoredSuggestions</key>
+				<false/>
+			</dict>
 		</dict>
 		<!-- Firefox Developer Edition -->
 		<dict>
@@ -215,6 +220,11 @@
 			</dict>
 			<key>IPProtectionAvailable</key>
 			<true/>
+			<key>FirefoxSuggest</key>
+			<dict>
+				<key>SponsoredSuggestions</key>
+				<false/>
+			</dict>
 		</dict>
 		<!-- Firefox Nightly -->
 		<dict>
@@ -321,6 +331,11 @@
 			</dict>
 			<key>IPProtectionAvailable</key>
 			<true/>
+			<key>FirefoxSuggest</key>
+			<dict>
+				<key>SponsoredSuggestions</key>
+				<false/>
+			</dict>
 		</dict>
 	</array>
 	<!-- Configuration metadata -->
