@@ -46,7 +46,7 @@
 				<key>TabGroups</key>
 				<false/>
 				<key>Locked</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>AIControls</key>
 			<dict>
@@ -55,7 +55,7 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>Translations</key>
 				<dict>
@@ -76,28 +76,28 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>LinkPreviewKeyPoints</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SidebarChatbot</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SmartWindow</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 			</dict>
 			<key>SearchEngines</key>
@@ -152,7 +152,7 @@
 				<key>TabGroups</key>
 				<false/>
 				<key>Locked</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>AIControls</key>
 			<dict>
@@ -161,7 +161,7 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>Translations</key>
 				<dict>
@@ -182,28 +182,28 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>LinkPreviewKeyPoints</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SidebarChatbot</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SmartWindow</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 			</dict>
 			<key>SearchEngines</key>
@@ -258,7 +258,7 @@
 				<key>TabGroups</key>
 				<false/>
 				<key>Locked</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>AIControls</key>
 			<dict>
@@ -267,7 +267,7 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>Translations</key>
 				<dict>
@@ -288,28 +288,28 @@
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>LinkPreviewKeyPoints</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SidebarChatbot</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 				<key>SmartWindow</key>
 				<dict>
 					<key>Value</key>
 					<string>blocked</string>
 					<key>Locked</key>
-					<true/>
+					<false/>
 				</dict>
 			</dict>
 			<key>SearchEngines</key>
