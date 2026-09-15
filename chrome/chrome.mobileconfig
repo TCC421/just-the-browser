@@ -48,6 +48,8 @@
 			<integer>1</integer>
 			<key>FindsSettings</key>
 			<integer>2</integer>
+			<key>ThirdPartyAiChatSettings</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>

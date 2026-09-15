@@ -13,5 +13,6 @@
   "HelpMeReadSettings": 2,
   "AutofillPredictionSettings": 2,
   "ChromeSuggestionsSettings": 1,
-  "FindsSettings": 2
+  "FindsSettings": 2,
+  "ThirdPartyAiChatSettings": 1
 }

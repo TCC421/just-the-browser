@@ -112,6 +112,7 @@ These are the policy settings in the Just the Browser configuration file.
 | AutofillPredictionSettings | Blocks Chrome from using generative AI to better understand forms and help fill more fields. |
 | ChromeSuggestionsSettings | Turns off suggestions for AI capabilities. |
 | FindsSettings | Turns off the AI-based feature that helps you search for and understand content on the current web page. |
+| ThirdPartyAiChatSettings | Blocks AI Mode integrations from any third-party search engine set as the browser's default search. |
 
 ### Documentation
 
