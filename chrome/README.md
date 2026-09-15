@@ -109,6 +109,8 @@ These are the policy settings in the Just the Browser configuration file.
 | DevToolsGenAiSettings | Turns off debugging in the Dev Tools powered by generative AI models. |
 | SearchContentSharingSettings | Disables the "Ask Google" button in the address bar, the "Search this tab with Google Lens" context menu option, and other features for sharing the current page to Google AI Mode and Lens. |
 | HelpMeReadSettings | Turns off the Help Me Read feature powered by AI models. |
+| AutofillPredictionSettings | Blocks Chrome from using generative AI to better understand forms and help fill more fields. |
+| ChromeSuggestionsSettings | Turns off suggestions for AI capabilities. |
 
 ### Documentation
 
