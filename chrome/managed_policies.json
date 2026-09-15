@@ -9,5 +9,6 @@
   "BuiltInDnsClientEnabled": false,
   "DefaultBrowserSettingEnabled": false,
   "DevToolsGenAiSettings": 2,
-  "SearchContentSharingSettings": 1
+  "SearchContentSharingSettings": 1,
+  "HelpMeReadSettings": 2
 }

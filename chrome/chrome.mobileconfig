@@ -40,6 +40,8 @@
 			<integer>2</integer>
 			<key>SearchContentSharingSettings</key>
 			<integer>1</integer>
+			<key>HelpMeReadSettings</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>

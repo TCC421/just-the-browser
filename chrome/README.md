@@ -101,13 +101,14 @@ These are the policy settings in the Just the Browser configuration file.
 | CreateThemesSettings | Turns off the ability to create custom themes and wallpapers with generative AI. |
 | GeminiSettings | Blocks Gemini app integrations. |
 | GenAILocalFoundationalModelSettings | Prevents the local AI model from being downloaded. |
-| HelpMeWriteSettings | Turns off the Help Me Write feature powered by AI. |
+| HelpMeWriteSettings | Turns off the Help Me Write feature powered by AI models. |
 | HistorySearchSettings | Turns off AI History Search. |
 | TabCompareSettings | Turns off the AI-powered Tab Compare feature. |
 | BuiltInDnsClientEnabled | Forces Chrome to use the host operating system's DNS client instead of the built-in DNS client. This has no effect when using DNS-over-HTTPS. |
 | DefaultBrowserSettingEnabled | Prevents Chrome from checking if it's the default browser and showing notifications about it. |
 | DevToolsGenAiSettings | Turns off debugging in the Dev Tools powered by generative AI models. |
 | SearchContentSharingSettings | Disables the "Ask Google" button in the address bar, the "Search this tab with Google Lens" context menu option, and other features for sharing the current page to Google AI Mode and Lens. |
+| HelpMeReadSettings | Turns off the Help Me Read feature powered by AI models. |
 
 ### Documentation
 
