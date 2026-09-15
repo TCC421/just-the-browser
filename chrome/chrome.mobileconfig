@@ -46,6 +46,8 @@
 			<integer>2</integer>
 			<key>ChromeSuggestionsSettings</key>
 			<integer>1</integer>
+			<key>FindsSettings</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>

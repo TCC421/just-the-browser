@@ -99,7 +99,7 @@ These are the policy settings in the Just the Browser configuration file.
 | ------- | ----------- |
 | AIModeSettings | Turns off Google's AI Mode integrations in the address bar and the New Tab page search box. |
 | CreateThemesSettings | Turns off the ability to create custom themes and wallpapers with generative AI. |
-| GeminiSettings | Blocks Gemini app integrations. |
+| GeminiSettings | Blocks most Gemini AI integrations in Chrome, such as automated browsing. |
 | GenAILocalFoundationalModelSettings | Prevents the local AI model from being downloaded. |
 | HelpMeWriteSettings | Turns off the Help Me Write feature powered by AI models. |
 | HistorySearchSettings | Turns off AI History Search. |
@@ -111,6 +111,7 @@ These are the policy settings in the Just the Browser configuration file.
 | HelpMeReadSettings | Turns off the Help Me Read feature powered by AI models. |
 | AutofillPredictionSettings | Blocks Chrome from using generative AI to better understand forms and help fill more fields. |
 | ChromeSuggestionsSettings | Turns off suggestions for AI capabilities. |
+| FindsSettings | Turns off the AI-based feature that helps you search for and understand content on the current web page. |
 
 ### Documentation
 

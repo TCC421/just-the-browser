@@ -12,5 +12,6 @@
   "SearchContentSharingSettings": 1,
   "HelpMeReadSettings": 2,
   "AutofillPredictionSettings": 2,
-  "ChromeSuggestionsSettings": 1
+  "ChromeSuggestionsSettings": 1,
+  "FindsSettings": 2
 }
