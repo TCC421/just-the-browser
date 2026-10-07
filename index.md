@@ -43,17 +43,19 @@ This feed can be used with [Feedly](https://feedly.com/i/subscription/feed%2Fhtt
 
 Got a question? Check here first, and if you still need help, [create an issue on GitHub](https://github.com/corbindavenport/just-the-browser/issues) or [join the Discord](https://discord.com/invite/tqJDRsmQVn).
 
-### Why is CompatTelRunner.exe constantly running with this installed?
+### Why is CompatTelRunner.exe constantly running?
 
-There is a [bug](https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704) in Windows that causes a CPU loop when Just the Browser's uninstall shortcuts are present in the "Installed apps" section of the Windows settings. The current installation script and registry files do not include those shortcuts.
+There is [a bug in Windows](https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704) that causes a CPU loop when Just the Browser's uninstall shortcuts are present in the "Installed apps" section of the Windows settings. The current installation script and registry files do not include those shortcuts.
 
-If you have those shortcuts, the installer will remove them for you when it starts. You can also run these commands in a PowerShell window with Administrator Privileges:
+If those shortcuts are present on your PC, they are automatically deleted when you run the Windows install script, or when you use any of the current `install.reg` or `uninstall.reg` files.
+
+You can also delete the shortcuts with these commands in a PowerShell window with Administrator Privileges:
 
 ```powershell
-Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome" -Force
-Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge" -Force
-Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox" -Force
-Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave" -Force
+Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome"
+Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge"
+Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox"
+Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave"
 ```
 
 ### What features or settings are changed?
