@@ -13,10 +13,18 @@ if ($args.Count -eq 0) {
 
 # Remove Uninstall shortcuts in Windows Installed Apps (Add or Remove Programs) list if present
 # A Windows bug was causing performance issues: https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704
-$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome" -Force
-$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge" -Force
-$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox" -Force
-$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave" -Force
+if (Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome") {
+    Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome"
+}
+if (Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge") {
+    Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge"
+}
+if (Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox") {
+    Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox"
+}
+if (Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave") {
+    Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave"
+}
 
 $OS = Get-CimInstance Win32_OperatingSystem
 $MicrosoftEdgeInstallRegistry = "$BaseURL/edge/install.reg"
