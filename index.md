@@ -43,7 +43,7 @@ This feed can be used with [Feedly](https://feedly.com/i/subscription/feed%2Fhtt
 
 Got a question? Check here first, and if you still need help, [create an issue on GitHub](https://github.com/corbindavenport/just-the-browser/issues) or [join the Discord](https://discord.com/invite/tqJDRsmQVn).
 
-## Why is CompatTelRunner.exe constantly running with this installed?
+### Why is CompatTelRunner.exe constantly running with this installed?
 
 There is a [bug](https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704) in Windows that causes a CPU loop when Just the Browser's uninstall shortcuts are present in the "Installed apps" section of the Windows settings. The current installation script and registry files do not include those shortcuts.
 
