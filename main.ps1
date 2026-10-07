@@ -11,6 +11,13 @@ if ($args.Count -eq 0) {
     $BaseURL = $args[0]
 }
 
+# Remove Uninstall shortcuts in Windows Installed Apps (Add or Remove Programs) list if present
+# A Windows bug was causing performance issues: https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704
+$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome" -Force
+$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge" -Force
+$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserFirefox" -Force
+$Removed = Remove-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserBrave" -Force
+
 $OS = Get-CimInstance Win32_OperatingSystem
 $MicrosoftEdgeInstallRegistry = "$BaseURL/edge/install.reg"
 $MicrosoftEdgeUninstallRegistry = "$BaseURL/edge/uninstall.reg"
