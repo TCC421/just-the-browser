@@ -333,7 +333,8 @@ function Show-Menu {
     }
     # Exit option
     $options.Add(@{
-            Label = "Exit"; Action = { exit }
+            Label = "Exit"
+            Action = { Start-Process "https://justthebrowser.com/support/"; exit }
         })
     # Show main menu
     Show-Header

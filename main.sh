@@ -250,6 +250,15 @@ _uninstall_brave() {
     fi
 }
 
+# Open URL in default browser
+_show_url() {
+    if [ "$OS" = "Darwin" ]; then
+        open "$1"
+    else
+        xdg-open "$1"
+    fi
+}
+
 # Main menu selection
 _main() {
     # Create list for menu options
@@ -350,6 +359,7 @@ _main() {
         elif [ "$choice" = "Brave: Remove settings" ]; then
             _uninstall_brave
         elif [ "$choice" = "Exit" ]; then
+            _show_url "https://justthebrowser.com/support/"
             exit 0
         else
             read -p "Invalid option. Press Enter/Return to continue.";
