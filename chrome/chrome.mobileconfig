@@ -50,6 +50,12 @@
 			<integer>2</integer>
 			<key>ThirdPartyAiChatSettings</key>
 			<integer>1</integer>
+			<key>ShoppingListEnabled</key>
+			<false />
+			<key>PromotionsEnabled</key>
+			<false />
+			<key>TryOnYouSettings</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>

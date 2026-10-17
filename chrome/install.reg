@@ -17,5 +17,8 @@ Windows Registry Editor Version 5.00
 "ChromeSuggestionsSettings"=dword:00000001
 "FindsSettings"=dword:00000002
 "ThirdPartyAiChatSettings"=dword:00000001
+"ShoppingListEnabled"=dword:00000000
+"PromotionsEnabled"=dword:00000000
+"TryOnYouSettings"=dword:00000002
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserChrome]

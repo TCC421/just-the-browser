@@ -113,6 +113,9 @@ These are the policy settings in the Just the Browser configuration file.
 | ChromeSuggestionsSettings | Turns off suggestions for AI capabilities. |
 | FindsSettings | Turns off the AI-based feature that helps you search for and understand content on the current web page. |
 | ThirdPartyAiChatSettings | Blocks AI Mode integrations from any third-party search engine set as the browser's default search. |
+| ShoppingListEnabled | Turns off the [shopping list and price tracking](https://support.google.com/chrome/answer/11625545) features. |
+| PromotionsEnabled | Blocks product promotional content, "including the welcome pages that help users sign in to Google Chrome, set Google Chrome as users' default browser, or otherwise inform them of product features." |
+| TryOnYouSettings | Turns off the ability to "virtually try on clothing images found on the web," and use input and ouput for model training. |
 
 ### Documentation
 
