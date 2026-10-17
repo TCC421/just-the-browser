@@ -1,15 +1,13 @@
 #Requires -RunAsAdministrator
 #Requires -Version 4.0
 
+# Allow alternate base URL as first command-line argument, for testing and development
+Param(
+    [string]$BaseUrl = "https://raw.githubusercontent.com/corbindavenport/just-the-browser/main"
+)
+
 # GitHub requires TLS v1.2, but it's not enabled by default in PowerShell v5.0 and older releases
 [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12
-
-# Allow alternate base URL as first command-line argument, for testing and development
-if ($args.Count -eq 0) {
-    $BaseURL = "https://raw.githubusercontent.com/corbindavenport/just-the-browser/main"
-} else {
-    $BaseURL = $args[0]
-}
 
 # Remove Uninstall shortcuts in Windows Installed Apps (Add or Remove Programs) list if present
 # A Windows bug was causing performance issues: https://github.com/corbindavenport/just-the-browser/issues/58#issuecomment-6043949704
@@ -27,14 +25,14 @@ if (Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\JustThe
 }
 
 $OS = Get-CimInstance Win32_OperatingSystem
-$MicrosoftEdgeInstallRegistry = "$BaseURL/edge/install.reg"
-$MicrosoftEdgeUninstallRegistry = "$BaseURL/edge/uninstall.reg"
-$GoogleChromeInstallRegistry = "$BaseURL/chrome/install.reg"
-$GoogleChromeUninstallRegistry = "$BaseURL/chrome/uninstall.reg"
-$FirefoxInstallRegistry = "$BaseURL/firefox/install.reg"
-$FirefoxUninstallRegistry = "$BaseURL/firefox/uninstall.reg"
-$BraveInstallRegistry = "$BaseURL/brave/install.reg"
-$BraveUninstallRegistry = "$BaseURL/brave/uninstall.reg"
+$MicrosoftEdgeInstallRegistry = "$BaseUrl/edge/install.reg"
+$MicrosoftEdgeUninstallRegistry = "$BaseUrl/edge/uninstall.reg"
+$GoogleChromeInstallRegistry = "$BaseUrl/chrome/install.reg"
+$GoogleChromeUninstallRegistry = "$BaseUrl/chrome/uninstall.reg"
+$FirefoxInstallRegistry = "$BaseUrl/firefox/install.reg"
+$FirefoxUninstallRegistry = "$BaseUrl/firefox/uninstall.reg"
+$BraveInstallRegistry = "$BaseUrl/brave/install.reg"
+$BraveUninstallRegistry = "$BaseUrl/brave/uninstall.reg"
 
 # Render initial interface for all pages
 function Show-Header {
