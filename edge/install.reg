@@ -37,5 +37,6 @@ Windows Registry Editor Version 5.00
 "PinningWizardAllowed"=dword:00000000
 "CopilotCoworkToolActionsEnabled"=dword:00000000
 "ExtensionManifestV2Availability"=dword:00000002
+"RemixAvailability"=dword:00000000
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\JustTheBrowserEdge]

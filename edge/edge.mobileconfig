@@ -90,6 +90,8 @@
             <false/>
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
+            <key>RemixAvailability</key>
+            <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Beta -->
 		<dict>
@@ -177,6 +179,8 @@
             <false/>
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
+            <key>RemixAvailability</key>
+            <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Dev -->
 		<dict>
@@ -264,6 +268,8 @@
             <false/>
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
+            <key>RemixAvailability</key>
+            <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Canary -->
 		<dict>
@@ -351,6 +357,8 @@
             <false/>
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
+            <key>RemixAvailability</key>
+            <integer>0</integer>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>
