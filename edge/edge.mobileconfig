@@ -92,6 +92,8 @@
             <integer>2</integer>
             <key>RemixAvailability</key>
             <integer>0</integer>
+            <key>BlueprintGWAAvailability</key>
+            <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Beta -->
 		<dict>
@@ -180,6 +182,8 @@
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
             <key>RemixAvailability</key>
+            <integer>0</integer>
+            <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Dev -->
@@ -270,6 +274,8 @@
             <integer>2</integer>
             <key>RemixAvailability</key>
             <integer>0</integer>
+            <key>BlueprintGWAAvailability</key>
+            <integer>0</integer>
 		</dict>
         <!-- Microsoft Edge Canary -->
 		<dict>
@@ -358,6 +364,8 @@
             <key>ExtensionManifestV2Availability</key>
             <integer>2</integer>
             <key>RemixAvailability</key>
+            <integer>0</integer>
+            <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
 		</dict>
 	</array>
