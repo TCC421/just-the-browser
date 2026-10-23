@@ -94,6 +94,8 @@
             <integer>0</integer>
             <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
+            <key>EdgeAutofillMlEnabled</key>
+            <false/>
 		</dict>
         <!-- Microsoft Edge Beta -->
 		<dict>
@@ -185,6 +187,8 @@
             <integer>0</integer>
             <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
+            <key>EdgeAutofillMlEnabled</key>
+            <false/>
 		</dict>
         <!-- Microsoft Edge Dev -->
 		<dict>
@@ -276,6 +280,8 @@
             <integer>0</integer>
             <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
+            <key>EdgeAutofillMlEnabled</key>
+            <false/>
 		</dict>
         <!-- Microsoft Edge Canary -->
 		<dict>
@@ -367,6 +373,8 @@
             <integer>0</integer>
             <key>BlueprintGWAAvailability</key>
             <integer>0</integer>
+            <key>EdgeAutofillMlEnabled</key>
+            <false/>
 		</dict>
 	</array>
 	<key>PayloadDisplayName</key>

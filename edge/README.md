@@ -72,6 +72,7 @@ These are the policy settings in the Just the Browser configuration file.
 | ExtensionManifestV2Availability | Force Manifest v2 extensions (like uBlock Origin) to continue working until support is [completely removed](https://blogs.windows.com/msedgedev/2026/08/07/moving-the-microsoft-edge-extensions-ecosystem-forward-with-manifest-version-3/). |
 | RemixAvailability | Blocks the [Remix feature](https://support.microsoft.com/en-us/edge/web-remix-in-microsoft-edge) that uses a local AI model to modify webpages. |
 | BlueprintGWAAvailability | Blocks the ability to send tab content to Copilot to create apps with GenerateWebApp (GWA). |
+| EdgeAutofillMlEnabled | Machine learning-powered autofill suggestions aren't shown, and autofill no longer uses cloud-based machine learning models to better detect form fields. |
 
 ### Documentation
 
